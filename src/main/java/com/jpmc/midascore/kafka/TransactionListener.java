@@ -26,7 +26,7 @@ public class TransactionListener {
         this.restTemplate = restTemplate;
     }
 
-    @KafkaListener(topics = "${general.kafka-topic", groupId = "midas-core-group")
+    @KafkaListener(topics = "${general.kafka-topic}", groupId = "midas-core-group")
     public void receive(Transaction transaction) {
 
         UserRecord sender =
@@ -45,7 +45,7 @@ public class TransactionListener {
 // validation
         if (senderBalance < txAmount) return;
 
-// 🔹 CALL INCENTIVE API
+        // Call incentive API
         Incentive incentive = restTemplate.postForObject(
                 "http://localhost:8080/incentive",
                 transaction,
@@ -70,3 +70,5 @@ public class TransactionListener {
 
     }
 }
+
+
