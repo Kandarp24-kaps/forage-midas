@@ -29,6 +29,7 @@ H2 Database
 REST APIs
 
 Maven
+
 ▶️ How It Works (High Level)
 
 Transactions are published to Kafka
