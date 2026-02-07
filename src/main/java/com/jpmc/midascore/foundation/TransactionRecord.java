@@ -21,14 +21,28 @@ public class TransactionRecord {
 
     private float amount;
 
+    private float incentive;
+
     private Instant timestamp = Instant.now();;
 
     public TransactionRecord() {}
+    public float getIncentive() {
+        return incentive;
+    }
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount) {
+    public void setIncentive(float incentive) {
+        this.incentive = incentive;
+    }
+
+    public TransactionRecord(UserRecord sender,
+                             UserRecord recipient,
+                             float amount,
+                             float incentive) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentive = incentive;
         this.timestamp = Instant.now();
     }
+
 }
